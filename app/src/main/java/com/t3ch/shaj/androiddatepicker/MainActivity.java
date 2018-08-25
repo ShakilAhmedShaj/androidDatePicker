@@ -2,6 +2,7 @@ package com.t3ch.shaj.androiddatepicker;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
@@ -24,6 +25,15 @@ public class MainActivity extends AppCompatActivity {
 
         textView.setText(currentDate());
 
+        selectButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                textView.setText(currentDate());
+
+            }
+        });
+
 
     }
 
@@ -31,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Current Date : ");
         stringBuilder.append(datePicker.getDayOfMonth() + "/");
-        stringBuilder.append((datePicker.getMonth()+1) + "/");
+        stringBuilder.append((datePicker.getMonth() + 1) + "/");
         stringBuilder.append(datePicker.getYear());
 
         return stringBuilder.toString();
